@@ -1,14 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>C1_W2_Lab_1_mnist</title>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.1.0"></script>
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-vis"></script>
   </head>
   <body>
-    <h1>Handwriting Classifier</h1>
+    <h1>Fashion Classifier!</h1>
     <canvas
       id="canvas"
       width="280"
@@ -29,7 +25,7 @@
     <input
       type="button"
       value="classify"
-      id="sd"
+      id="sb"
       size="48"
       style="position: absolute; top: 400; left: 100"
     />
@@ -40,7 +36,8 @@
       size="23"
       style="position: absolute; top: 400; left: 180"
     />
-    <script src="data.js" type="module"></script>
-    <script src="script.js" type="module"></script>
+    <script src="fashion-data.js" type="module"></script>
+    <script src="C1_W2_Assignment.js" type="module"></script>
+    <!-- <script src="C1_W2_Assignment_Solution.js" type="module"></script> -->
   </body>
 </html>
