@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C1_W3_Lab_3B_linear</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script>
+      async function run() {
+        const MODEL_URL =
+          "http://127.0.0.1:5500/01.%20%20Browser-based%20Models%20with%20TensorFlow.js/week%203/Labs/linear/model.json";
+        const model = await tf.loadLayersModel(MODEL_URL);
+        console.log(model.summary());
+        const input = tf.tensor2d([10.0], [1, 1]);
+        const result = model.predict(input);
+        alert(result);
+      }
+      run();
+    </script>
+  </head>
+  <body></body>
+</html>

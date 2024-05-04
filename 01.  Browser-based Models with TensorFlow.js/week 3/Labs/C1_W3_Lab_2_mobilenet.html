@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>C1_W3_Lab_2_mobilenet</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet@1.0.0"></script>
+  </head>
+  <body>
+    <!--
+        "/image/coffee.jpg"
+        "/image/cat.jpg"
+        "/image/pig.jpg"
+     -->
+    <img id="img" src="image/coffee.jpg" style="height: 700px" alt="" />
+    <div
+      id="output"
+      style="font-family: courier; font-size: 24px; height: 300px"
+    ></div>
+  </body>
+  <script>
+    const img = document.getElementById("img");
+    const outp = document.getElementById("output");
+    mobilenet.load().then((model) => {
+      model.classify(img).then((predictions) => {
+        console.log(predictions);
+        for (var i = 0; i < predictions.length; i++) {
+          outp.innerHTML +=
+            "<br/>" +
+            predictions[i].className +
+            " : " +
+            predictions[i].probability;
+        }
+      });
+    });
+  </script>
+</html>
